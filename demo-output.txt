@@ -1,0 +1,102 @@
+
+=== step1_sum.py
+adding one by one: 5050
+first pairs: [(1, 100), (2, 99), (3, 98)] ... last pair: (50, 51)
+50 pairs, each 101 -> 5050
+1 to 10000000 one by one: 50000005000000 in 0.07 s
+1 to 10000000 by the pairing: 50000005000000 in one multiplication
+
+=== step2_sky.py
+22 nights over 41 days, error about 3.0 arcseconds each
+  day  0  longitude  53.0560  latitude -3.2331
+  day  1  longitude  52.9947  latitude -3.1617
+  day  2  longitude  52.9403  latitude -3.0913
+  day 41  longitude  55.9129  latitude -0.7203
+it moved 3.80 degrees across the sky
+one trip round the Sun: 1681 days, so 41 days is 2.4% of the orbit
+true place on day 340: longitude 172.30, latitude 10.12
+it moves 116.1 degrees between day 41 and day 340
+angle from the Sun: day 0 133, day 41 94, smallest 4 on day 197, day 340 82
+
+=== step3_line.py
+guess 52.920  sum of squares 0.00400
+guess 52.930  sum of squares 0.00250
+guess 52.940  sum of squares 0.00200
+guess 52.950  sum of squares 0.00250
+guess 52.960  sum of squares 0.00400
+the average is 52.940
+latitude line: 0.06179 degrees per day, start -3.1719, sum of squares 3.290e-02
+  slope x 0.98 -> sum of squares 5.198e-02
+  slope x 1.02 -> sum of squares 5.198e-02
+straight lines say day 340: longitude 74.7, latitude 17.8
+miss: 94.0 degrees
+
+=== step4_bell.py
+100000 errors, each the sum of 30 small nudges. spread 3.17
+  -8 to  -7     764  bell says    763  #
+  -7 to  -6    1568  bell says   1533  ###
+  -6 to  -5    2829  bell says   2788  #######
+  -5 to  -4    4651  bell says   4590  ###########
+  -4 to  -3    6893  bell says   6840  #################
+  -3 to  -2    9099  bell says   9225  ######################
+  -2 to  -1   11249  bell says  11260  ############################
+  -1 to   0   12187  bell says  12441  ##############################
+   0 to   1   12365  bell says  12441  ##############################
+   1 to   2   11198  bell says  11260  ###########################
+   2 to   3    9244  bell says   9225  #######################
+   3 to   4    7039  bell says   6840  #################
+   4 to   5    4582  bell says   4590  ###########
+   5 to   6    2832  bell says   2788  #######
+   6 to   7    1618  bell says   1533  ####
+   7 to   8     774  bell says    763  #
+within 1 spread: 68.0%
+within 2 spread: 95.5%
+within 3 spread: 99.8%
+guess 52.92  sum of squares 0.0040  chance 0.082 of the best
+guess 52.93  sum of squares 0.0025  chance 0.535 of the best
+guess 52.94  sum of squares 0.0020  chance 1.000 of the best
+guess 52.95  sum of squares 0.0025  chance 0.535 of the best
+guess 52.96  sum of squares 0.0040  chance 0.082 of the best
+
+=== step5_elim.py
+after column 1
+         3       2       1      39
+         0     5/3     1/3       8
+         0     4/3     8/3      13
+after column 2
+         3       2       1      39
+         0     5/3     1/3       8
+         0       0    12/5    33/5
+after column 3
+         3       2       1      39
+         0     5/3     1/3       8
+         0       0    12/5    33/5
+one bundle of each grade gives: 37/4, 17/4, 11/4 = [9.25, 4.25, 2.75]
+  check [3, 2, 1] -> 39 should be 39
+  check [2, 3, 1] -> 34 should be 34
+  check [1, 2, 3] -> 26 should be 26
+six equations, six unknowns: largest error 8.9e-16
+
+=== step6_orbit.py
+straight lines: miss 94.0 degrees
+circle:  size 2.762, leftover 38.3 arcsec, 6 rounds, miss 10.50 degrees
+ellipse: size 2.781, stretch 0.0839, tilt 10.60, leftover 2.9 arcsec, 51 rounds, miss 0.319 degrees
+truth:   size 2.767, stretch 0.0785, tilt 10.60
+200 skies with different errors: half miss by less than 0.18, 9 in 10 by less than 0.43, worst 0.93 degrees
+inside one Moon width (0.5 degrees): 187 of 200
+60 blind first guesses: 49 end on the same orbit; the other 11 stop with a leftover of 1731 arcsec or more
+
+=== step7_today.py
+step     0  slope 0.00000  start 0.0000  sum of squares 9.4225e+01
+step    10  slope 0.02449  start -2.3555  sum of squares 4.9076e+00
+step   100  slope 0.06176  start -3.1711  sum of squares 3.2908e-02
+step  1000  slope 0.06179  start -3.1719  sum of squares 3.2903e-02
+step  2000  slope 0.06179  start -3.1719  sum of squares 3.2903e-02
+formula from step 3:   slope 0.06179  start -3.1719  sum of squares 3.2903e-02
+noise step    0: signal left 1.000, still alike 1.00
+noise step  100: signal left 0.947, still alike 0.95
+noise step  250: signal left 0.724, still alike 0.73
+noise step  500: signal left 0.280, still alike 0.28
+noise step 1000: signal left 0.006, still alike 0.08
+
+all checks passed
